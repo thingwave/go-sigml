@@ -1,5 +1,5 @@
 # go-sigml
-Golang module for Signaling Markup Language (SigML)
+Golang module for Signaling Media Language (SigML)
 
 ## Introduction
 
@@ -10,7 +10,9 @@ SigML can express events, errors and alerts. And even embedd SenML data.
 
 ## Installation
 Install
+```
 go get github.com/thingwave/sigml/v2
+```
 
 ## Further reading
 
