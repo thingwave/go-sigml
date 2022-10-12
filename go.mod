@@ -1,4 +1,4 @@
-module github.com/thingwave/go-sigml/v2
+module github.com/thingwave/go-sigml
 
 go 1.13
 
