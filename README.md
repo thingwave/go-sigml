@@ -30,7 +30,7 @@ SigML can express events, errors and alerts. And even embedd SenML data.
 ## Installation
 Install
 ```
-go get github.com/thingwave/sigml/v2
+go get github.com/thingwave/go-sigml
 ```
 
 ## Further reading
