@@ -9,12 +9,12 @@ import (
 type SigMLRecord struct {
 	Bn string `json:"bn,omitempty"`  //src dev/sys
 	Bt float64 `json:"bt,omitempty"`
-	Bver string `json:"bnver,omitempty"`
+	Bver string `json:"bver,omitempty"`
 	N string `json:"n,omitempty"`  //source srv
 
 	X string  `json:"x,omitempty"` //eXception
 	E string  `json:"e,omitempty"` //error
-	S string  `json:"x,omitempty"` //signal/event
+	S string  `json:"s,omitempty"` //signal/event
 	Se Severity `json:"se"`
 	D string `json:"d,omitempty"`
 	P interface{} `json:"p,omitempty"` //payload
