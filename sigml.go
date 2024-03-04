@@ -7,16 +7,16 @@ import (
 )
 
 type SigMLRecord struct {
-	Bn string `json:"bn,omitempty"`  //src dev/sys
+	Bn string `json:"bn,omitempty"`  //source device/system
 	Bt float64 `json:"bt,omitempty"`
 	Bver int `json:"bver,omitempty"`
-	N string `json:"n,omitempty"`  //source srv
+	N string `json:"n"`  //source service/signal
 
-	X string  `json:"x,omitempty"` //eXception
-	E string  `json:"e,omitempty"` //error
-	S string  `json:"s,omitempty"` //signal/event
-	Se Severity `json:"se"`
-	D string `json:"d,omitempty"`
+	X string  `json:"x,omitempty"` // eXception
+	E string  `json:"e,omitempty"` // Eror
+	S string  `json:"s,omitempty"` // Signal/event
+	Se Severity `json:"se,omitempty"`
+	D string `json:"d,omitempty"`  // Description
 	P interface{} `json:"p,omitempty"` //payload
 }
 
@@ -39,7 +39,16 @@ func (msg SigMLMessage) Validate() error {
 	}
 
 	for _, rec := range msg {
+		if rec.X == "" && rec.E == "" && rec.S == "" {
+			return errors.New("One of x, e or s must be valid")
+		}
 		if rec.X != "" && rec.E != "" && rec.S != "" {
+			return errors.New("Only one of x, e or s can be valid")
+		}
+		if rec.X != "" && (rec.E != "" || rec.S != "") {
+			return errors.New("Only one of x, e or s can be valid")
+		}
+		if (rec.X != "" || rec.E != "") && rec.S != "" {
 			return errors.New("Only one of x, e or s can be valid")
 		}
 	}
