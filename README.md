@@ -7,6 +7,31 @@ Golang module for Signaling Media Language (SigML)
 SigML is to error messages and events what SenML is for sensor data.
 SigML can express events, errors and alerts. And even embedd SenML data.
 
+## Fields
+
+### bn
+This is the Base name from SenML.
+### bt
+This is the Base time fro SenML, expressed as seconds from 1970-0101 00:00 (UNIX epoch).
+### bver
+This is the Base version from SenML.
+
+### x
+x stands for eXception and is used for indicating exceptions upstream.
+### e
+e stands for error and is used for indicating different typs of hardware, software and system errors upstream.
+### s
+s stands for signal and is used for transmitting signals upstream.
+
+### se
+se means Severity and is used to indicate hpw serours an exception/error/signal is.
+
+### d
+d stand for Description is is a human readable text indicating what has happened.
+
+### p
+p is used for sending generic payloads, such as SenML encoded data belonging to an error or similiar.
+
 ### Examples
 
 ```
