@@ -9,7 +9,7 @@ import (
 type SigMLRecord struct {
 	Bn string `json:"bn,omitempty"`  //src dev/sys
 	Bt float64 `json:"bt,omitempty"`
-	Bver string `json:"bver,omitempty"`
+	Bver int `json:"bver,omitempty"`
 	N string `json:"n,omitempty"`  //source srv
 
 	X string  `json:"x,omitempty"` //eXception
@@ -45,3 +45,4 @@ func (msg SigMLMessage) Validate() error {
 	}
 	return nil
 }
+
