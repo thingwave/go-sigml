@@ -72,7 +72,9 @@ First import using
 
 ```
 import (
-  github.com/thingwave/go-sigml
+  "fmt"
+  "encoding/json"
+  "github.com/thingwave/go-sigml"
 )
 ```
 
@@ -81,6 +83,11 @@ Create message using:
 var evt sigml.SigMLMessage
 head := sigml.SigMLRecord{Bn: "", Bt: float64(time.now().Unixmilli)/1000.0, Bver: 1}
 evt = append(evt, head)
+
+payload, err := json.Marshal(evt)
+if err == nil {
+  fmt.Printf("%s\n", string(payload))
+}
 
 ```
 ## Further reading
