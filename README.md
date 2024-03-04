@@ -20,9 +20,9 @@ This is the Base version from SenML. Set to 1 for now.
 ### x
 x stands for eXception and is used for indicating exceptions upstream.
 ### e
-e stands for error and is used for indicating different typs of hardware, software and system errors upstream.
+e stands for Error and is used for indicating different typs of hardware, software and system errors upstream.
 ### s
-s stands for signal and is used for transmitting signals upstream.
+s stands for Signal event and is used for transmitting events upstream.
 
 ### se
 se means Severity and is used to indicate how serious an exception/error/signal is.
@@ -66,5 +66,22 @@ Install
 go get github.com/thingwave/go-sigml
 ```
 
+
+## Usage
+First import using
+
+```
+import (
+  github.com/thingwave/go-sigml
+)
+```
+
+Create message using:
+```
+var evt sigml.SigMLMessage
+head := sigml.SigMLRecord{Bn: "", Bt: float64(time.now().Unixmilli)/1000.0, Bver: 1}
+evt = append(evt, head)
+
+```
 ## Further reading
 
