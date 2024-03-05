@@ -35,7 +35,7 @@ Critical      : 200
 Catastrophic  : 255
 
 ### d
-d stand for Description is is a human readable text indicating what has happened.
+d stands for Description is is a human readable text indicating what has happened.
 
 ### p
 p is used for sending generic payloads, such as SenML encoded data belonging to an error or similiar.
